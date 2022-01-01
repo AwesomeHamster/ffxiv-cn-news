@@ -23,11 +23,11 @@
 
 返回一个数组，每个元素存有以下属性
 
-```JSON
-  id:String     => 消息的编号
-  title:        => 标题
-  url:          => 链接
-  time:         => 发布时间
-  image:        => 封面图片的链接
-  description:  => 消息概要
+```TypeScript
+  id:String           // 消息的编号
+  title:String        // 标题
+  url:String          // 链接
+  time:String         // 发布时间
+  image:String        // 封面图片的链接
+  description:String  // 消息概要
 ```
