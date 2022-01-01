@@ -6,6 +6,10 @@ const fs = require("fs");
 let categorys = new Map([
   ["newscont", "5309,5310,5311,5312,5313"],
   ["topnews", "7186"],
+  ["news", "5310"],
+  ["official activity", "5311"],
+  ["announcement", "5312"],
+  ["Third party activity", "5313"],
 ]);
 
 const getNews = async (pageSize = 1, category = "newscont") => {
