@@ -3,7 +3,7 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 const fs = require("fs");
 
-let categorys = new Map([
+const categorys = new Map([
   ["newscont", "5309,5310,5311,5312,5313"],
   ["topnews", "7186"],
   ["news", "5310"],
