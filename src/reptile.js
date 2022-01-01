@@ -6,7 +6,7 @@ const fs = require("fs");
 const getNews = async (pageSize = 1) => {
   let datas = new Array();
   let pageIndex = 0;
-  await axios({
+  let result = await axios({
     method: "GET",
     url: `https://ff.web.sdo.com/inc/newdata.ashx?url=List?gameCode=ff&category=5309,5310,5311,5312,5313&pageIndex=${pageIndex}&pageSize=${pageSize}`,
     headers: {
@@ -16,17 +16,16 @@ const getNews = async (pageSize = 1) => {
       "Accept-Encoding": "gzip, deflate, br",
       Connection: "keep-alive",
     },
-  }).then((result) => {
-    let data = result.data.Data;
-    data.forEach((item) => {
-      datas.push({
-        id: item.Id,
-        title: item.Title,
-        url: item.Author,
-        time: Date.parse(new Date(item.PublishDate)),
-        image: item.HomeImagePath,
-        description: item.Summary,
-      });
+  });
+  let data = result.data.Data;
+  data.forEach((item) => {
+    datas.push({
+      id: item.Id,
+      title: item.Title,
+      url: item.Author,
+      time: Date.parse(new Date(item.PublishDate)),
+      image: item.HomeImagePath,
+      description: item.Summary,
     });
   });
   return datas;
