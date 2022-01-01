@@ -1,5 +1,10 @@
-// import { getNews } from "src/reptile";
-const reptile = require("../index");
+const assert = require("assert");
+const { describe, it } = require("mocha");
+const reptlie = require("../src/reptile");
 
-var arr = reptile.reptile.getNews(5);
-console.log(arr);
+describe("#reptile.js", () => {
+  it("test", async () => {
+    const arr = await reptlie.getNews();
+    console.log(arr);
+  });
+});
