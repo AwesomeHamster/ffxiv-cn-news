@@ -12,12 +12,12 @@
 - `category：消息分类`
 
 消息分类有以下几种
-- 所有消息：`newscont`
-- 置顶消息：`topnews`
+- 所有消息：`all-news`
+- 置顶消息：`topics`
 - 新闻：`news`
 - 公告：`announcement`
-- 官方活动：`official activity`
-- 第三方活动：`Third party activity`
+- 官方活动：`official-events`
+- 第三方活动：`unofficial-events`
 
 返回类型
 

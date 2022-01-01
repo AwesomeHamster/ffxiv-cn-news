@@ -4,15 +4,15 @@ const axios = require("axios");
 const fs = require("fs");
 
 const categorys = new Map([
-  ["newscont", "5309,5310,5311,5312,5313"],
-  ["topnews", "7186"],
+  ["all-news", "5309,5310,5311,5312,5313"],
+  ["topics", "7186"],
   ["news", "5310"],
-  ["official activity", "5311"],
+  ["official-events", "5311"],
   ["announcement", "5312"],
-  ["Third party activity", "5313"],
+  ["unofficial-events", "5313"],
 ]);
 
-const getNews = async (pageSize = 1, category = "newscont") => {
+const getNews = async (pageSize = 1, category = "all-news") => {
   let datas = new Array();
   let pageIndex = 0;
   let result = await axios({
