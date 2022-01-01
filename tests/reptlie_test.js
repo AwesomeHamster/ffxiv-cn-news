@@ -4,7 +4,7 @@ const reptlie = require("../src/reptile");
 
 describe("#reptile.js", () => {
   it("test", async () => {
-    const arr = await reptlie.getNews();
+    const arr = await reptlie.getNews(1, "topnews");
     console.log(arr);
   });
 });
