@@ -2,7 +2,7 @@ const request = require("request");
 const cheerio = require("cheerio");
 const fs = require("fs");
 
-const getNews = (param, pageSize = 1) => {
+const getNews = (pageSize = 1) => {
   let datas = new Array();
   let pageIndex = 0;
   request(
