@@ -23,7 +23,7 @@ const getNews = async (pageSize = 1) => {
         id: item.Id,
         title: item.Title,
         url: item.Author,
-        time: item.PublishDate,
+        time: Date.parse(new Date(item.PublishDate)),
         image: item.HomeImagePath,
         description: item.Summary,
       });
