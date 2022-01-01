@@ -2,9 +2,9 @@ const request = require("request");
 const cheerio = require("cheerio");
 const fs = require("fs");
 
-let pageSize = 1;
-let pageIndex = 0;
-const getNews = (param) => {
+const getNews = (param, pageSize = 1) => {
+  let datas = new Array();
+  let pageIndex = 0;
   request(
     {
       url: param.url,
@@ -12,21 +12,21 @@ const getNews = (param) => {
       headers: param.headers,
     },
     (error, response, result) => {
-      // console.log(result.Code);
       let data = JSON.parse(result).Data;
-      // console.log(rson.Data);
-      // let data = new Array();
-      // data = rson.Data;
-      // console.log(data[0]);
-      data.forEach((item, index) => {
-        console.log(item.Id);
-        console.log(item.Title);
-        console.log(item.Summary);
-        console.log(item.Author);
-        console.log(item.HomeImagePath);
+
+      data.forEach((item) => {
+        datas.push({
+          id: item.Id,
+          title: item.Title,
+          url: item.Author,
+          time: item.PublishDate,
+          image: item.HomeImagePath,
+          description: item.Summary,
+        });
       });
     }
   );
+  return datas;
 };
 
 getNews({
