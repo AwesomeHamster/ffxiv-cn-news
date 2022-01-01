@@ -24,10 +24,10 @@
 返回一个数组，每个元素存有以下属性
 
 ```TypeScript
-  id:String           // 消息的编号
-  title:String        // 标题
-  url:String          // 链接
-  time:String         // 发布时间
-  image:String        // 封面图片的链接
-  description:String  // 消息概要
+  id            :String     // 消息的编号
+  title         :String     // 标题
+  url           :String     // 链接
+  time          :String     // 发布时间
+  image         :String     // 封面图片的链接
+  description   :String     // 消息概要
 ```
