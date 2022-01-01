@@ -39,3 +39,5 @@ getNews({
     Connection: "keep-alive",
   },
 });
+
+module.exports = { getNews };
