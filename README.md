@@ -27,13 +27,13 @@
 ```JSON
 [
   {
-    id : 9527         
-    title : ''
-    url : ''
-    time : 1145141919810
-    image : ''
-    description : ''
-  }
+    id : 9527,
+    title : '',
+    url : '',
+    time : 1145141919810,
+    image : '',
+    description : '',
+  },
 ]
 ```
 ```TypeScript
