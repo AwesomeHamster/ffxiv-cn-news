@@ -1,6 +1,6 @@
 # **ffxiv-cn-news-reptile**
 
-用`JavaScript`写的爬虫
+用`TypeScript`写的爬虫
 
 # 食用
 
