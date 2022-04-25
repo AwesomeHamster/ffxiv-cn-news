@@ -25,16 +25,14 @@
 返回一个数组，每个元素存有以下属性
 
 ```JSON
-[
-  {
-    id : 9527,
-    title : '',
-    url : '',
-    time : 1145141919810,
-    image : '',
-    description : '',
-  },
-]
+{
+  id : 9527,
+  title : '',
+  url : '',
+  time : 1145141919810,
+  image : '',
+  description : '',
+}
 ```
 ```TypeScript
   id            :Number     // 消息的编号
