@@ -4,15 +4,33 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "mocha ./tests/"
+    "test": "cross-env TS_NODE_PROJECT='tests/tsconfig.test.json' mocha tests/*.ts",
+    "cover": "nyc --reporter=html npm run test"
   },
   "dependencies": {
     "axios": "~0.26.1",
-    "chai": "~4.3.6",
     "cheerio": "~1.0.0-rc.10",
-    "mocha": "~9.2.2",
     "morgan": "~1.10.0",
-    "request": "~2.88.2",
+    "request": "~2.88.2"
+  },
+  "mocha": {
+    "require": [
+      "ts-node/register",
+      "tsconfig-paths/register"
+    ],
+    "ui": "bdd"
+  },
+  "repository": "https://github.com/AwesomeHamster/ffxiv-cn-news-reptile.git",
+  "author": "SaarChaffee <1240148332@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "cross-env": "^7.0.3",
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
+    "sinon": "^13.0.2",
+    "ts-node": "^10.7.0",
+    "tsconfig-paths": "^3.14.1",
     "typescript": "^4.6.3"
   }
 }
