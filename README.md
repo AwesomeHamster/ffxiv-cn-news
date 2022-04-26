@@ -4,11 +4,11 @@
 
 # 食用
 
-## 提供
+## 提供方法
 `getNews()`
 
 可选参数
-- `index: 页面标号`
+- `index: 页面索引`
 - `size：数量`
 - `category：消息分类`
 
@@ -24,21 +24,11 @@
 
 返回一个数组，每个元素存有以下属性
 
-```JSON
-{
-  id : 9527,
-  title : '',
-  url : '',
-  time : 1145141919810,
-  image : '',
-  description : '',
-}
-```
 ```TypeScript
   id            :Number     // 消息的编号
   title         :String     // 标题
   url           :String     // 链接
-  time          :Date     // 发布时间
+  time          :Date       // 发布时间
   image         :String     // 封面图片的链接
   description   :String     // 消息概要
 ```
