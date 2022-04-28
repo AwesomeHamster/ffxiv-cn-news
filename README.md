@@ -1,4 +1,4 @@
-# **ffxiv-cn-news-reptile**
+# **ffxiv-cn-news-crawler**
 
 用`TypeScript`写的爬虫
 
