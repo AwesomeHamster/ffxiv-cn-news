@@ -10,7 +10,7 @@ export const categorys = new Map([
   ['unofficial-events', '5313'],
 ])
 
-export interface ResData {
+export interface RespData {
   Code: string
   Message: string
   PageCount: number
@@ -59,7 +59,7 @@ export async function getNews(pageIndex: number = 0, pageSize: number = 1, categ
     })
   } else {
     await axios
-    .get<ResData>(url, {
+    .get<RespData>(url, {
       headers,
       timeout,
       validateStatus,
