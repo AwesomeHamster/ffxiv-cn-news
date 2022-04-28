@@ -59,7 +59,7 @@ export async function getNews(pageIndex: number = 0, pageSize: number = 1, categ
     })
   } else {
     await axios
-    .get<ResData>(urlt, {
+    .get<ResData>(url, {
       headers,
       timeout,
       validateStatus,
