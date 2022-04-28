@@ -52,8 +52,11 @@ export async function getNews(pageIndex: number = 0, pageSize: number = 1, categ
   )}&pageIndex=${pageIndex}&pageSize=${pageSize}`
   let urlt = "http://aaa.aa"
   let validateStatus = (status:number)=>(status>=200&&status<400)
-  if () {
-    
+  if (pageIndex<0||pageSize<=0) {
+    datas.push({
+      error: "EPARAM",
+      message: "illegal parameters"
+    })
   } else {
     await axios
     .get<ResData>(urlt, {
