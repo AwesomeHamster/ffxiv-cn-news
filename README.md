@@ -32,3 +32,11 @@
   image         :String     // 封面图片的链接
   description   :String     // 消息概要
 ```
+
+## 错误处理
+
+返回一个长度为1的数组，内容如下
+```TypeScript
+  error          :String    // 错误类型
+  message        :String    // 错误详情
+```
