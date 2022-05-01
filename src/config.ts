@@ -41,7 +41,7 @@ export const AxiosConfig = {
     'Connection': 'close',
     'Cache-Control': 'no-cache, no-store, must-revalidate',
   },
-  timeout:  process.env['AXIOS_TIMEOUT']||1000,
+  timeout:  Number(process.env['AXIOS_TIMEOUT'])||1000,
   responseEncoding: 'utf8',
   validateStatus: (status: number) => status >= 200 && status < 400,
 }
