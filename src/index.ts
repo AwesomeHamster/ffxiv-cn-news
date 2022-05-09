@@ -14,35 +14,20 @@ export async function getNews(pageIndex: number = 0, pageSize: number = 1, categ
     pageIndex +
     '&pageSize=' +
     pageSize
-  if (pageIndex < 0 || pageSize <= 0 || !categorys[category]) {
-    datas.push({
-      error: 'EPARAM',
-      message: 'illegal parameters',
+
+  let config = AxiosConfig
+  await axios.get<RespData>(url, config).then((resp) => {
+    resp.data.Data.forEach((item) => {
+      datas.push({
+        id: item.Id,
+        title: item.Title,
+        url: item.Author,
+        time: item.PublishDate,
+        image: item.HomeImagePath,
+        description: item.Summary,
+      })
     })
-  } else {
-    let config = AxiosConfig
-    await axios
-      .get<RespData>(url, config)
-      .then((resp) => {
-        resp.data.Data.forEach((item) => {
-          datas.push({
-            id: item.Id,
-            title: item.Title,
-            url: item.Author,
-            time: item.PublishDate,
-            image: item.HomeImagePath,
-            description: item.Summary,
-          })
-        })
-      })
-      .catch((err) => {
-        console.log(err)
-        let error = err.toJSON()
-        datas.push({
-          error: error.code,
-          message: error.message,
-        })
-      })
-  }
+  })
+
   return datas
 }
