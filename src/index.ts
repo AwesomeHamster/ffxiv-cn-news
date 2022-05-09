@@ -1,18 +1,20 @@
 import axios from 'axios'
 import { categorys, RespData, DataArr, AxiosConfig } from '../config'
 
-export async function getNews(pageIndex: number = 0, pageSize: number = 1, category: string = 'all-news') {
+type msgType = keyof typeof categorys
+
+export async function getNews(pageIndex: number = 0, pageSize: number = 1, category: msgType = 'all-news') {
   let datas = new Array()
   let url: string =
     'https://ff.web.sdo.com/inc/newdata.ashx?url=List?' +
     'gameCode=ff' +
     '&category=' +
-    categorys.get(category) +
+    categorys[category] +
     '&pageIndex=' +
     pageIndex +
     '&pageSize=' +
     pageSize
-  if (pageIndex < 0 || pageSize <= 0 || !categorys.has(category)) {
+  if (pageIndex < 0 || pageSize <= 0 || !categorys[category]) {
     datas.push({
       error: 'EPARAM',
       message: 'illegal parameters',
