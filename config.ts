@@ -1,6 +1,6 @@
 import 'dotenv/config'
 
-export const categorys = {
+export const categorys:{ [k:string]:string } = {
   'all-news': '5309,5310,5311,5312,5313',
   'topics': '7186',
   'news': '5310',

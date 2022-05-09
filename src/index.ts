@@ -1,9 +1,8 @@
 import axios from 'axios'
 import { categorys, RespData, DataArr, AxiosConfig } from '../config'
 
-type msgType = keyof typeof categorys
 
-export async function getNews(pageIndex: number = 0, pageSize: number = 1, category: msgType = 'all-news') {
+export async function getNews(pageIndex: number = 0, pageSize: number = 1, category: string = 'all-news') {
   let datas = new Array()
   let url: string =
     'https://ff.web.sdo.com/inc/newdata.ashx?url=List?' +
