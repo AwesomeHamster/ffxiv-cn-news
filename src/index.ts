@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { categorys, RespData, DataArr, AxiosConfig } from '../configg'
+import { categorys, RespData, DataArr, AxiosConfig } from '../config'
 
 export async function getNews(pageIndex: number = 0, pageSize: number = 1, category: string = 'all-news') {
   let datas = new Array()
