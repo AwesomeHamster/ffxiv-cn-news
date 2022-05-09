@@ -1,9 +1,12 @@
 import axios from 'axios'
-import { categorys, RespData, DataArr, AxiosConfig } from '../config'
+import { categorys, RespData, AxiosConfig,Datas } from '../config'
 
 
-export async function getNews(pageIndex: number = 0, pageSize: number = 1, category: string = 'all-news') {
-  let datas = new Array()
+export async function getNews(
+  pageIndex: number = 0,
+  pageSize: number = 1,
+  category: string = 'all-news'): Promise<Datas[]> {
+  let datas:Datas[] = []
   let url: string =
     'https://ff.web.sdo.com/inc/newdata.ashx?url=List?' +
     'gameCode=ff' +

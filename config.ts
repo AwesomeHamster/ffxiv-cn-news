@@ -35,6 +35,15 @@ export interface DataArr {
   OutLink: string
 }
 
+export interface Datas{
+  id: number,
+  title: string,
+  url: string,
+  time: Date,
+  image: string,
+  description:string
+}
+
 export const AxiosConfig = {
   headers: {
     'User-Agent':
