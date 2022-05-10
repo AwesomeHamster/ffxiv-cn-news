@@ -8,9 +8,17 @@
 `getNews()`
 
 可选参数
-- `index: 页面索引`
-- `size：数量`
-- `category：消息分类`
+```TypeScript
+{
+  url: string
+  params: {
+      url: string
+      category: string
+      pageIndex: number
+      pageSize: number
+  }
+}
+```
 
 ## 消息分类有以下几种
 - 所有消息：`all-news`
@@ -31,12 +39,4 @@
   time          :Date       // 发布时间
   image         :String     // 封面图片的链接
   description   :String     // 消息概要
-```
-
-## 错误处理
-
-返回一个长度为1的数组，内容如下
-```TypeScript
-  error          :String    // 错误类型
-  message        :String    // 错误详情
 ```
