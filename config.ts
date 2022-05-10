@@ -70,5 +70,5 @@ export const AxiosConfig = {
   timeout: Number(process.env.AXIOS_TIMEOUT) || 1000,
   responseEncoding: 'utf8',
   validateStatus: (status: number) => status >= 200 && status < 400,
-  defaultUrl:'https://ff.web.sdo.com/inc/newdata.ashx'
+  defaultUrl: 'https://ff.web.sdo.com/inc/newdata.ashx',
 }
