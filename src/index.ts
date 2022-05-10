@@ -1,24 +1,20 @@
 import axios from 'axios'
-import { categorys, RespData, AxiosConfig,Datas } from '../config'
-
+import { RespData, AxiosConfig, Datas,IParams,Params } from '../config'
 
 export async function getNews(
-  pageIndex: number = 0,
-  pageSize: number = 1,
-  category: string = 'all-news'): Promise<Datas[]> {
-  let datas:Datas[] = []
-  let url: string =
-    'https://ff.web.sdo.com/inc/newdata.ashx?url=List?' +
-    'gameCode=ff' +
-    '&category=' +
-    categorys[category] +
-    '&pageIndex=' +
-    pageIndex +
-    '&pageSize=' +
-    pageSize
-
-  let config = AxiosConfig
-  await axios.get<RespData>(url, config).then((resp) => {
+  config: {
+    url?: string,
+    params?:IParams
+ }
+): Promise<Datas[]> {
+  let datas: Datas[] = []
+  await axios.get<RespData>(config.url ?? AxiosConfig.defaultUrl, {
+    headers: AxiosConfig.headers,
+    timeout: AxiosConfig.timeout,
+    responseEncoding: AxiosConfig.responseEncoding,
+    validateStatus: AxiosConfig.validateStatus,
+    params:config.params??Params
+  }).then((resp) => {
     resp.data.Data.forEach((item) => {
       datas.push({
         id: item.Id,
