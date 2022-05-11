@@ -19,11 +19,6 @@ export const defaultParams: IParams = {
   pageSize: 10,
 }
 
-export const defaultAxiosConfig = {
-
-}
-
-
 export async function getNews(config: {
   url?: string
   params?: IParams

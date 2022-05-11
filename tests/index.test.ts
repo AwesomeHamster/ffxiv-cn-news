@@ -1,0 +1,11 @@
+import { describe, it } from 'mocha'
+import { getNews } from '../src'
+import { expect } from 'chai'
+
+
+describe('ffxiv cn news crawler', () => {
+  it('test', async () => {
+    const arr = await getNews({})
+    expect(arr).to.be.an('array').and.has.length.at.least(1)
+  })
+})
