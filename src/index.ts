@@ -1,5 +1,5 @@
-import axios, { Axios, AxiosRequestConfig } from 'axios'
-import { RespData, AxiosConfig, Datas, IParams, Params } from '../config'
+import axios, { AxiosRequestConfig } from 'axios'
+import { RespData, defaultAxiosConfig, Datas, IParams, defaultParams } from '../config'
 
 export async function getNews(config: {
   url?: string
@@ -8,12 +8,12 @@ export async function getNews(config: {
 }): Promise<Datas[]> {
   let datas: Datas[] = []
   await axios
-    .get<RespData>(config.url ?? AxiosConfig.defaultUrl, {
-      headers: AxiosConfig.headers,
-      timeout: AxiosConfig.timeout,
-      responseEncoding: AxiosConfig.responseEncoding,
-      validateStatus: AxiosConfig.validateStatus,
-      params: config.params ?? Params,
+    .get<RespData>(config.url ?? defaultAxiosConfig.defaultUrl, {
+      headers: defaultAxiosConfig.headers,
+      timeout: defaultAxiosConfig.timeout,
+      responseEncoding: defaultAxiosConfig.responseEncoding,
+      validateStatus: defaultAxiosConfig.validateStatus,
+      params: config.params ?? defaultParams,
       ...config.axiosConfig,
     })
     .then((resp) => {

@@ -49,14 +49,14 @@ export interface IParams {
   pageSize: number
 }
 
-export const Params: IParams = {
+export const defaultParams: IParams = {
   url: 'List?gameCode=ff',
   category: '5309,5310,5311,5312,5313',
   pageIndex: 0,
   pageSize: 10,
 }
 
-export const AxiosConfig = {
+export const defaultAxiosConfig = {
   headers: {
     'User-Agent':
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36',
