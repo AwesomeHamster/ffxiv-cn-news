@@ -1,7 +1,11 @@
-import axios from 'axios'
+import axios, { Axios, AxiosRequestConfig } from 'axios'
 import { RespData, AxiosConfig, Datas, IParams, Params } from '../config'
 
-export async function getNews(config: { url?: string; params?: IParams }): Promise<Datas[]> {
+export async function getNews(config: {
+  url?: string
+  params?: IParams
+  axiosConfig?: AxiosRequestConfig
+}): Promise<Datas[]> {
   let datas: Datas[] = []
   await axios
     .get<RespData>(config.url ?? AxiosConfig.defaultUrl, {
@@ -10,6 +14,7 @@ export async function getNews(config: { url?: string; params?: IParams }): Promi
       responseEncoding: AxiosConfig.responseEncoding,
       validateStatus: AxiosConfig.validateStatus,
       params: config.params ?? Params,
+      ...config.axiosConfig,
     })
     .then((resp) => {
       resp.data.Data.forEach((item) => {

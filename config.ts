@@ -1,5 +1,3 @@
-import 'dotenv/config'
-
 export const categorys: { [k: string]: string } = {
   'all-news': '5309,5310,5311,5312,5313',
   'topics': '7186',
@@ -7,7 +5,7 @@ export const categorys: { [k: string]: string } = {
   'official-events': '5311',
   'announcement': '5312',
   'unofficial-events': '5313',
-  'self-group': process.env.CATEGORYS_GROUP || '',
+  'self-group': '',
 }
 
 export interface RespData {
@@ -67,7 +65,7 @@ export const AxiosConfig = {
     'Connection': 'close',
     'Cache-Control': 'no-cache, no-store, must-revalidate',
   },
-  timeout: Number(process.env.AXIOS_TIMEOUT) || 1000,
+  timeout: 1000,
   responseEncoding: 'utf8',
   validateStatus: (status: number) => status >= 200 && status < 400,
   defaultUrl: 'https://ff.web.sdo.com/inc/newdata.ashx',
