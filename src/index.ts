@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios'
-import { RespData, Datas, IParams } from './config'
+import { RespData, Datas, IParams } from './types'
 
 export const categorys: { [k: string]: string } = {
   'all-news': '5309,5310,5311,5312,5313',
