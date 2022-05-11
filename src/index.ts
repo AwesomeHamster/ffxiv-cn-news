@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios'
-import { RespData, defaultAxiosConfig, Datas, IParams, defaultParams } from '../config'
+import { RespData, defaultAxiosConfig, Datas, IParams, defaultParams } from './config'
 
 export async function getNews(config: {
   url?: string
